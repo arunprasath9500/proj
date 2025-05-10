@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Responsive Website</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background-color: #f5f5f5;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 15px;
+      text-align: center;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #444;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: white;
+      padding: 14px 20px;
+      text-decoration: none;
+      text-align: center;
+    }
+
+    nav a:hover {
+      background-color: #555;
+    }
+
+    main.content-wrapper {
+      flex: 1;
+      padding: 20px;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .sidebar {
+      flex: 1;
+      min-width: 200px;
+      background: #ddd;
+      padding: 20px;
+    }
+
+    .main-content {
+      flex: 3;
+      min-width: 300px;
+      background: #fff;
+      padding: 20px;
+    }
+
+    footer {
+      background: #0a1a2f;
+      color: #fff;
+      padding: 40px 20px 20px;
+    }
+
+    .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .footer-section {
+      flex: 1 1 220px;
+      margin: 15px;
+    }
+
+    .footer-section h2, .footer-section h3 {
+      margin-bottom: 15px;
+    }
+
+    .footer-section p, .footer-section a {
+      color: #ccc;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .footer-section ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-section ul li a {
+      text-decoration: none;
+      display: block;
+      margin-bottom: 8px;
+      color: #ccc;
+    }
+
+    .footer-section ul li a:hover {
+      color: #fff;
+    }
+
+    .footer-section input[type="email"] {
+      padding: 8px;
+      width: 70%;
+      border: none;
+      border-radius: 3px;
+      margin-top: 10px;
+    }
+
+    .footer-section button {
+      padding: 8px 12px;
+      background: #fff;
+      color: #0a1a2f;
+      border: none;
+      cursor: pointer;
+      margin-left: 5px;
+    }
+
+    .socials a {
+      margin-right: 10px;
+      text-decoration: none;
+      color: #ccc;
+      font-size: 18px;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding: 10px 0;
+      border-top: 1px solid #333;
+      margin-top: 20px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+
+      .main-content {
+        margin-left: 0;
+        margin-top: 10px;
+      }
+
+      .footer-container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .footer-section {
+        text-align: center;
+      }
+
+      .footer-section input[type="email"],
+      .footer-section button {
+        width: 100%;
+        margin-top: 10px;
+      }
+
+      .footer-section button {
+        margin-left: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>My Responsive Website</h1>
+  </header>
+
+  
+
+  <main class="content-wrapper">
+    <div class="container">
+      <div class="sidebar">
+        <h2>Sidebar</h2>
+        <p>Links or info here</p>
+      </div>
+      <div class="main-content">
+        <h2>Studio History</h2>
+        <p>Since our inception in [Year], [Studio Name] has been at the forefront of AR development, pushing the boundaries of technology to create immersive experiences. From humble beginnings to industry leaders, our journey is marked by innovation and a passion for excellence.</p>
+
+        <h2>Team</h2>
+        <p>Meet our team of AR enthusiasts, tech wizards, and creative visionaries who bring your augmented reality dreams to life.</p>
+        <p>[Name, Position]: [Brief Bio]</p>
+        <p>[Name, Position]: [Brief Bio]</p>
+
+        <h2>Vision and Values</h2>
+        <p>At [Studio Name], our vision is to bridge the gap between the real and the virtual, creating seamless experiences that captivate and inspire. Our values are rooted in creativity, integrity, and a relentless pursuit of excellence.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section about">
+        <h2>Style</h2>
+        <p>Subscribe Easy Tutorials YouTube channel to watch more videos on website development and press the bell icon to get notifications.</p>
+      </div>
+      <div class="footer-section office">
+        <h3>Office</h3>
+        <p>ITPL Road<br>Whitefield, Bangalore<br>Karnataka, PIN 560066<br>India</p>
+        <p>Email: avinashdev@outlook.com</p>
+        <p>Phone: +91 0123456789</p>
+      </div>
+      <div class="footer-section links">
+        <h3>Links</h3>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Features</a></li>
+          <li><a href="#">Contacts</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; Easy Tutorials © 2021 – All Rights Reserved</p>
+    </div>
+  </footer>
+
+</body>
+</html>

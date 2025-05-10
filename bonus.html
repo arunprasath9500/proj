@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    @keyframes fadeSlideDown {
+      0% {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+  /* Welcome message — no background color */
+.top-message {
+  color: black;       /* or any color you want */
+  font-size: 2rem;
+  padding: 1rem 0;
+  margin-top: 1rem;
+}
+
+/* Animation keyframes */
+@keyframes fadeSlideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Apply animation */
+.animate-welcome {
+  animation: fadeSlideDown 1.2s ease-out forwards;
+}
+  </style>
+</head>
+<body>
+ <div class="top-message animate-welcome text-center py-3">
+  <h1>Welcome</h1>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login - 3 R's</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: white;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .login-container {
+      background: white;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      width: 400px;
+      text-align: center;
+      position: relative;
+    }
+    .login-container .icon-container {
+      background: linear-gradient(135deg, #50c878, #228b22);
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto -40px;
+      z-index: 1;
+      position: relative;
+    }
+    .login-container .icon-container i {
+      font-size: 2rem;
+      color: white;
+    }
+    .login-container h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2rem;
+      color: bisque;
+      margin: 60px 0 20px;
+    }
+    .login-container form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .login-container form input {
+      padding: 15px;
+      font-size: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      outline: none;
+      transition: border 0.3s ease, box-shadow 0.3s ease;
+    }
+    .login-container form input:focus {
+      border-color: #50c878;
+      box-shadow: 0 0 8px rgba(80, 200, 120, 0.5);
+    }
+    .login-container form button {
+      padding: 15px;
+      font-size: 1rem;
+      font-weight: bold;
+      color: white;
+      background: linear-gradient(135deg, #50c878, #228b22);
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .login-container form button:hover {
+      background: linear-gradient(135deg, #228b22, #50c878);
+    }
+    .back-home {
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-size: 1rem;
+      color: #50c878;
+      font-weight: bold;
+    }
+    .back-home a {
+      text-decoration: none;
+      color: #50c878;
+      transition: color 0.3s ease;
+    }
+    .back-home a:hover {
+      color: #228b22;
+    }
+    .back-home i {
+      font-size: 1.2rem;
+    }
+    .circle {
+      position: absolute;
+      border-radius: 50%;
+      z-index: 0;
+    }
+    .circle.one {
+      width: 150px;
+      height: 150px;
+      background: #b2fba5;
+      top: -50px;
+      right: -50px;
+    }
+    .circle.two {
+      width: 200px;
+      height: 200px;
+      background: #50c878;
+      bottom: -100px;
+      left: -100px;
+    }
+    @media (max-width: 480px) {
+      .login-container {
+        width: 90%;
+        padding: 20px;
+      }
+      .login-container h1 {
+        font-size: 1.8rem;
+      }
+      .icon-container {
+        width: 60px;
+        height: 60px;
+      }
+      .icon-container i {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="circle one"></div>
+  <div class="circle two"></div>
+
+  <div class="login-container">
+    <div class="icon-container">
+      <i class="fas fa-leaf"></i>
+    </div>
+    <h1>Login</h1>
+    <form id="loginForm">
+      <input type="email" id="loginEmail" placeholder="Enter your email" required>
+      <input type="password" id="loginPassword" placeholder="Enter your password" required>
+      <button type="submit"><i class="fas fa-sign-in-alt"></i> Login</button>
+    </form>
+    <div class="back-home">
+      <i class="fas fa-arrow-left"></i>
+      <a href="final.html">Back to Home</a>
+      <a href="Register.html">Register Now</a>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const email = document.getElementById('loginEmail').value;
+      const password = document.getElementById('loginPassword').value;
+
+      // Get stored userData object from localStorage
+      const storedData = localStorage.getItem('userData');
+      const userData = storedData ? JSON.parse(storedData) : null;
+
+      // Validate credentials
+      if (userData && email === userData.email && password === userData.password) {
+        alert('Login successful!');
+
+        // Save logged in user info
+        localStorage.setItem('loggedUser', JSON.stringify(userData));
+
+        // Redirect to testing page
+        window.location.href = 'testing.html';
+      } else {
+        alert('Invalid credentials, please try again.');
+      }
+    });
+  </script>
+
+</body>
+</html>
